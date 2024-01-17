@@ -1,0 +1,82 @@
+<!-- table.component.html -->
+<div class="head-search p-3 pb-0 flex justify-between">
+    <div class="other-spend-static flex">
+        <p class="text-xl font-semibold m-0">Sectors Performance</p>
+        <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 mt-2 icon icon-tabler icon-tabler-info-octagon" width="17" height="17" viewBox="0 0 24 24" stroke-width="1.5" stroke="#d2ba7a" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M9.103 2h5.794a3 3 0 0 1 2.122 .879l4.101 4.1a3 3 0 0 1 .88 2.125v5.794a3 3 0 0 1 -.879 2.122l-4.1 4.101a3 3 0 0 1 -2.123 .88h-5.795a3 3 0 0 1 -2.122 -.88l-4.101 -4.1a3 3 0 0 1 -.88 -2.124v-5.794a3 3 0 0 1 .879 -2.122l4.1 -4.101a3 3 0 0 1 2.125 -.88z" />
+            <path d="M12 9h.01" />
+            <path d="M11 12h1v4h1" />
+          </svg>
+    </div>
+    <mat-form-field class="p-0">
+        <mat-label class="p-0"><svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer icon icon-tabler icon-tabler-search" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+            <path d="M21 21l-6 -6" />
+        </svg></mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Search by Company Name" #input>
+    </mat-form-field>
+</div>
+    
+  
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 shadow-none">
+  <!-- Image Column -->
+  <ng-container matColumnDef="imgAndName">
+    <th class="text-lg m-0 font-extrabold" mat-header-cell *matHeaderCellDef>Sectors Name</th>
+    <td class="flex" mat-cell *matCellDef="let element">
+      <!-- Use DomSanitizer directly in the template to sanitize the SVG code -->
+      <div [innerHTML]="element.icon | safeHtml"></div>
+      
+      <span class="text-lg m-0 font-medium pl-3 mt-3">{{element.name}}</span>
+    </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="weight">
+    <th class="text-lg m-0 font-extrabold text-end" mat-header-cell *matHeaderCellDef>Performance (%)</th>
+    <td class="text-end text-lg font-medium" mat-cell *matCellDef="let element"> {{element.weight}}% </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="symbol">
+    <th class="text-lg m-0 font-extrabold text-end" mat-header-cell *matHeaderCellDef>ICV Ranking</th>
+    <td class="text-end text-lg font-medium" mat-cell *matCellDef="let element">
+      <div class="flex justify-end items-center">
+        <span>{{element.symbol}}</span>
+        <span class="ml-2">
+          <svg xmlns="http://www.w3.org/2000/svg"
+            [ngClass]="{'icon icon-tabler icon-tabler-arrow-big-up-lines': element.symbol === 1,
+                       'icon icon-tabler icon-tabler-arrow-big-down-lines': element.symbol !== 1}"
+            width="25" height="50" viewBox="0 0 24 24" stroke-width="1.5"
+            [attr.stroke]="element.symbol !== 1 ? '#ff4500' : '#3c8f3d'" fill="none"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <ng-container *ngIf="element.symbol !== 1; else upArrow">
+              <path
+                d="M15 12h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-3h6v3z" />
+              <path d="M15 3h-6" />
+              <path d="M15 6h-6" />
+            </ng-container>
+            <ng-template #upArrow>
+              <path
+                d="M9 12h-3.586a1 1 0 0 1 -.707 -1.707l6.586 -6.586a1 1 0 0 1 1.414 0l6.586 6.586a1 1 0 0 1 -.707 1.707h-3.586v3h-6v-3z" />
+              <path d="M9 21h6" />
+              <path d="M9 18h6" />
+            </ng-template>
+          </svg>
+        </span>
+      </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  <!-- Row shown when there is no matching data. -->
+  <tr class="mat-row" *matNoDataRow>
+    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+  </tr>
+</table>
+
+  

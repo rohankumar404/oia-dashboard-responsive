@@ -1,0 +1,1231 @@
+<mat-sidenav-container class="example-container h-full bg-white" autosize>
+	<mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+		<mat-nav-list class="bg-teal-600 h-full">
+			<mat-list-item (click)="showSubmenu = !showSubmenu" class="items-center hover:bg-teal-500">
+                <mat-icon class="text-white" mat-list-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-dashboard w-full h-full" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M12 13m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                        <path d="M13.45 11.55l2.05 -2.05" />
+                        <path d="M6.4 20a9 9 0 1 1 11.2 0z" />
+                      </svg>
+                </mat-icon>
+				<span class="full-width text-white pl-2 text-lg" *ngIf="isExpanded || isShowing">Dashboard</span>
+			</mat-list-item>
+            <mat-list-item (click)="showSubmenu = !showSubmenu" class="items-center hover:bg-teal-500">
+                <mat-icon class="text-white" mat-list-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-users" width="23" height="23" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+                        <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
+                      </svg>
+                </mat-icon>
+				<span class="full-width text-white pl-2 text-lg" *ngIf="isExpanded || isShowing">Enterprise Admin</span>
+			</mat-list-item>
+            <mat-list-item (click)="showSubmenu = !showSubmenu" class="items-center hover:bg-teal-500">
+                <mat-icon class="text-white" mat-list-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-apps" width="26" height="26" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M4 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+                        <path d="M4 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+                        <path d="M14 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+                        <path d="M14 7l6 0" />
+                        <path d="M17 4l0 6" />
+                    </svg>
+                </mat-icon>
+				<span class="full-width text-white pl-2 text-lg" *ngIf="isExpanded || isShowing">Stakeholer Management</span>
+			</mat-list-item>
+            <mat-list-item (click)="showSubmenu = !showSubmenu" class="items-center hover:bg-teal-500">
+                <mat-icon class="text-white" mat-list-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chart-dots" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 3v18h18" />
+                        <path d="M9 9m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                        <path d="M19 7m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                        <path d="M14 15m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                        <path d="M10.16 10.62l2.34 2.88" />
+                        <path d="M15.088 13.328l2.837 -4.586" />
+                    </svg>
+                </mat-icon>
+				<span class="full-width text-white pl-2 text-lg" *ngIf="isExpanded || isShowing">lCV Management</span>
+			</mat-list-item>
+            <mat-list-item (click)="showSubmenu = !showSubmenu" class="items-center hover:bg-teal-500">
+                <mat-icon class="text-white" mat-list-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sitemap" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 15m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" />
+                        <path d="M15 15m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" />
+                        <path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" />
+                        <path d="M6 15v-1a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v1" />
+                        <path d="M12 9l0 3" />
+                    </svg>
+                </mat-icon>
+				<span class="full-width text-white pl-2 text-lg" *ngIf="isExpanded || isShowing">Profile Management</span>
+			</mat-list-item>
+            <mat-list-item (click)="showSubmenu = !showSubmenu" class="items-center hover:bg-teal-500">
+                <mat-icon class="text-white" mat-list-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-flipboard" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3.973 3h16.054c.537 0 .973 .436 .973 .973v4.052a.973 .973 0 0 1 -.973 .973h-5.025v4.831c0 .648 -.525 1.173 -1.173 1.173h-4.829v5.025a.973 .973 0 0 1 -.974 .973h-4.053a.973 .973 0 0 1 -.973 -.973v-16.054c0 -.537 .436 -.973 .973 -.973z" />
+                    </svg>
+                </mat-icon>
+				<span class="full-width text-white pl-2 text-lg" *ngIf="isExpanded || isShowing">OIA ICV Zone</span>
+			</mat-list-item>
+            <mat-list-item (click)="showSubmenu = !showSubmenu" class="items-center hover:bg-teal-500">
+                <mat-icon class="text-white" mat-list-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings-cog" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M12.003 21c-.732 .001 -1.465 -.438 -1.678 -1.317a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c.886 .215 1.325 .957 1.318 1.694" />
+                        <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                        <path d="M19.001 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                        <path d="M19.001 15.5v1.5" />
+                        <path d="M19.001 21v1.5" />
+                        <path d="M22.032 17.25l-1.299 .75" />
+                        <path d="M17.27 20l-1.3 .75" />
+                        <path d="M15.97 17.25l1.3 .75" />
+                        <path d="M20.733 20l1.3 .75" />
+                    </svg>
+                </mat-icon>
+				<span class="full-width text-white pl-2 text-lg" *ngIf="isExpanded || isShowing">Master Configuration</span>
+			</mat-list-item>
+            <mat-list-item (click)="showSubmenu = !showSubmenu" class="items-center hover:bg-teal-500">
+                <mat-icon class="text-white" mat-list-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-table-options" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M12 21h-7a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v7" />
+                        <path d="M3 10h18" />
+                        <path d="M10 3v18" />
+                        <path d="M19.001 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                        <path d="M19.001 15.5v1.5" />
+                        <path d="M19.001 21v1.5" />
+                        <path d="M22.032 17.25l-1.299 .75" />
+                        <path d="M17.27 20l-1.3 .75" />
+                        <path d="M15.97 17.25l1.3 .75" />
+                        <path d="M20.733 20l1.3 .75" />
+                    </svg>
+                </mat-icon>
+				<span class="full-width text-white pl-2 text-lg" *ngIf="isExpanded || isShowing">Contant Management</span>
+			</mat-list-item>
+            <mat-list-item (click)="showSubmenu = !showSubmenu" class="items-center hover:bg-teal-500">
+                <mat-icon class="text-white" mat-list-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-barcode" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                        <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+                        <path d="M8 13h1v3h-1z" />
+                        <path d="M12 13v3" />
+                        <path d="M15 13h1v3h-1z" />
+                    </svg>
+                </mat-icon>
+				<span class="full-width text-white pl-2 text-lg" *ngIf="isExpanded || isShowing">Reports & Analytics</span>
+			</mat-list-item>
+            <mat-list-item (click)="showSubmenu = !showSubmenu" class="items-center hover:bg-teal-500">
+                <mat-icon class="text-white" mat-list-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-24-hours" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M4 13c.325 2.532 1.881 4.781 4 6" />
+                        <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2" />
+                        <path d="M4 5v4h4" />
+                        <path d="M12 15h2a1 1 0 0 1 1 1v1a1 1 0 0 1 -1 1h-1a1 1 0 0 0 -1 1v1a1 1 0 0 0 1 1h2" />
+                        <path d="M18 15v2a1 1 0 0 0 1 1h1" />
+                        <path d="M21 15v6" />
+                    </svg>
+                </mat-icon>
+				<span class="full-width text-white pl-2 text-lg" *ngIf="isExpanded || isShowing">Support (Tickets)</span>
+			</mat-list-item>
+            <mat-list-item (click)="showSubmenu = !showSubmenu" class="items-center hover:bg-teal-500">
+                <mat-icon class="text-white" mat-list-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-address-book" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M20 6v12a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2z" />
+                        <path d="M10 16h6" />
+                        <path d="M13 11m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                        <path d="M4 8h3" />
+                        <path d="M4 12h3" />
+                        <path d="M4 16h3" />
+                    </svg>
+                </mat-icon>
+				<span class="full-width text-white pl-2 text-lg" *ngIf="isExpanded || isShowing">Contact Us</span>
+			</mat-list-item>
+		</mat-nav-list>
+	</mat-sidenav>
+    <div class="container w-full py-2 px-4 bg-white">
+       <div class="top-notification">
+        <div class="text text-end text-red-500 flex">
+            <p class="text-sm m-0 w-full">All Currency values are in</p><span class="text-red-500 font-semibold text-sm pl-1 pr-1">OMR</span>
+        </div>
+       </div>
+       <div class="page-head w-full flex justify-between mt-3">
+            <div class="left-contant">
+                <p class="font-extrabold text-2xl">OIA Qimam Dashboard - Q2, 2023</p>
+            </div>
+            <div class="right-contant-items flex">
+                <div class="item1">
+                    <select name="profile" id="profile" class="bg-buttur p-1 px-2 rounded-xl">
+                        <option value="OMR">OMR</option>
+                        <option value="OIA">OIA</option>
+                    </select>
+                </div>
+                <div class="item2 mx-2">
+                    <select name="year" id="year" class="bg-buttur p-1 px-2 rounded-xl">
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                    </select>
+                </div>
+                <div class="item3">
+                    <select name="Querter" id="Querter" class="bg-buttur p-1 px-2 rounded-xl">
+                        <option value="Querter1">Querter1</option>
+                        <option value="Querter2">Querter2</option>
+                        <option value="Querter3">Querter2</option>
+                        <option value="Querter4">Querter3</option>
+                    </select>
+                </div>
+            </div>
+       </div>
+       <div class="score-board w-full flex justify-between">
+            <div class="holding-ctagories w-2/5 p-3 bg-teal-600 flex justify-between rounded-md shadow-myshadow shadow-teal-500">
+                <div class="score text-white">
+                    <p class="text-xl">Holding</p>
+                    <p class="m-0 text-3xl font-semibold">12</p>
+                </div>
+                <div class="score text-white">
+                    <p class="text-xl">Subsidiaries</p>
+                    <p class="m-0 text-3xl font-semibold">160</p>
+                </div>
+                <div class="score text-white">
+                    <p class="text-xl">Constractors</p>
+                    <p class="m-0 text-3xl font-semibold">1235</p>
+                </div>
+            </div>
+            <div class="consolidated-spend-value w-mywidth p-3 shadow-myshadow shadow-slate-300 rounded-md">
+                <p class="text-center text-xl text-teal-600 m-0">Consolidated Spend Value</p>
+                <div class="vailu-score flex w-full justify-center">
+                    <p class="m-0 text-3xl font-semibold text-center">300.51</p>
+                    <p class="text-lg font-semibold text-slate-500 m-0 mt-1 pl-2">MIn</p>
+                </div>
+            </div>
+            <div class="consolidated-retained-value w-mywidth p-3 bg-teal-100 border-1 border-teal-600 rounded-md shadow-myshadow shadow-teal-300">
+                <p class="text-center text-xl text-teal-600 m-0">Consolidated Retained Vaiue</p>
+                <div class="vailu-score flex w-full justify-center">
+                    <p class="m-0 text-3xl font-semibold text-center">200.36</p>
+                    <p class="text-lg font-semibold text-slate-500 m-0 mt-1 pl-2 pr-2">MIn</p>
+                    <p class="px-2 py-1 m-0 bg-teal-600 text-white text-lg rounded-md">66.67%</p>
+                </div>
+            </div>
+       </div>
+       <div class="min-score-board w-full rounded-md shadow-myshadow shadow-slate-300 p-3 mt-3 justify-between flex">
+            <div class="oia-corporate-diract w-1/3 flex border-r-2 border-slate-300">
+                <div class="spend">
+                    <p class=" text-lg text-teal-600 m-0">OIA Corporate Direct Spend</p>
+                    <div class="vailu-score flex w-full">
+                    <p class="m-0 text-xl font-semibold">300.51</p>
+                    <p class="text-lg font-semibold text-slate-500 m-0 pl-2">MIn</p>
+                </div>
+                </div>
+                <div class="value ml-5">
+                    <p class="text-lg text-teal-600 m-0">Retained Vaiue</p>
+                    <div class="vailu-score flex w-full">
+                        <p class="m-0 text-xl font-semibold">200.36</p>
+                        <p class="text-lg font-semibold text-slate-500 m-0 pl-2 pr-2">MIn</p>
+                        <p class="px-2 py-1 m-0 bg-teal-600 text-white text-lg rounded-md">66.67%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="oia-corporate-diract w-1/3 flex border-r-2 border-slate-300">
+                <div class="spend">
+                    <p class=" text-lg text-teal-600 m-0">OIA Corporate Direct Spend</p>
+                    <div class="vailu-score flex w-full">
+                    <p class="m-0 text-xl font-semibold">300.51</p>
+                    <p class="text-lg font-semibold text-slate-500 m-0 pl-2">MIn</p>
+                </div>
+                </div>
+                <div class="value ml-5">
+                    <p class="text-lg text-teal-600 m-0">Retained Vaiue</p>
+                    <div class="vailu-score flex w-full">
+                        <p class="m-0 text-xl font-semibold">200.36</p>
+                        <p class="text-lg font-semibold text-slate-500 m-0 pl-2 pr-2">MIn</p>
+                        <p class="px-2 py-1 m-0 bg-teal-600 text-white text-lg rounded-md">66.67%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="oia-corporate-diract flex">
+                <div class="spend">
+                    <p class=" text-lg text-teal-600 m-0">OIA Corporate Direct Spend</p>
+                    <div class="vailu-score flex w-full">
+                    <p class="m-0 text-xl font-semibold">300.51</p>
+                    <p class="text-lg font-semibold text-slate-500 m-0 pl-2">MIn</p>
+                </div>
+                </div>
+                <div class="value ml-5">
+                    <p class="text-lg text-teal-600 m-0">Retained Vaiue</p>
+                    <div class="vailu-score flex w-full">
+                        <p class="m-0 text-xl font-semibold">200.36</p>
+                        <p class="text-lg font-semibold text-slate-500 m-0 pl-2 pr-2">MIn</p>
+                        <p class="px-2 py-1 m-0 bg-teal-600 text-white text-lg rounded-md">66.67%</p>
+                    </div>
+                </div>
+            </div>
+       </div>
+       <div class="outline-dashed outline-1 border-slate-500 w-full mt-5"></div>
+       <div class="page-head w-full flex justify-between mt-20">
+            <div class="left-contant">
+                <p class="font-extrabold text-2xl">OIA Corporate</p>
+            </div>
+            <div class="item3">
+                <select name="Querter" id="Querter" class="bg-teal-600 text-white p-1 px-2 rounded-xl">
+                    <option value="Filter by">Filter by</option>
+                    <option value="OIA">OIA</option>
+                    <option value="OMR">OMR</option>
+                </select>
+            </div>
+        </div>
+        <div class="total-contract flex justify-between">
+            <div class="total-contract-left-contant w-1/3 ">
+                <div class="total-value p-3 rounded-md shadow-myshadow shadow-slate-300 justify-between flex">
+                    <div class="spend">
+                        <p class=" text-lg text-teal-600 m-0">Total Contracts</p>
+                        <div class="vailu-score flex w-full">
+                            <p class="m-0 text-xl font-semibold">250</p>
+                        </div>
+                    </div>
+                    <div class="value ml-5">
+                        <p class="text-lg text-teal-600 m-0">Total Contracts Value</p>
+                        <div class="vailu-score flex w-full">
+                            <p class="m-0 text-xl font-semibold">750.55</p>
+                            <p class="text-lg font-semibold text-slate-500 m-0 mt-1 pl-2">MIn</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="total-value p-3 rounded-md shadow-myshadow shadow-slate-300 justify-between mt-3 flex">
+                    <div class="spend">
+                        <p class=" text-lg text-teal-600 m-0">Ring fencing</p>
+                        <div class="vailu-score flex w-full">
+                            <p class="m-0 text-xl font-semibold">5</p>
+                            <p class="m-0 pl-2 text-lg mt-1 font-medium">(75.00 MIn)</p>
+                        </div>
+                    </div>
+                    <div class="value ml-5">
+                        <p class="text-lg text-teal-600 m-0">Total Contracts Value</p>
+                        <div class="vailu-score flex w-full">
+                            <p class="m-0 text-xl font-semibold">750.55</p>
+                            <p class="m-0 pl-2 text-lg mt-1 font-medium">(50.00 MIn)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="procurement-spend p-3 rounded-md shadow-myshadow shadow-slate-300 mt-3">
+                    <div class="procurement-spend-head flex mb-2">
+                        <p class="text-xl font-semibold ">Procurement Spand</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 mt-2 icon icon-tabler icon-tabler-info-octagon" width="17" height="17" viewBox="0 0 24 24" stroke-width="1.5" stroke="#d2ba7a" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M9.103 2h5.794a3 3 0 0 1 2.122 .879l4.101 4.1a3 3 0 0 1 .88 2.125v5.794a3 3 0 0 1 -.879 2.122l-4.1 4.101a3 3 0 0 1 -2.123 .88h-5.795a3 3 0 0 1 -2.122 -.88l-4.101 -4.1a3 3 0 0 1 -.88 -2.124v-5.794a3 3 0 0 1 .879 -2.122l4.1 -4.101a3 3 0 0 1 2.125 -.88z" />
+                            <path d="M12 9h.01" />
+                            <path d="M11 12h1v4h1" />
+                          </svg>
+                    </div>
+                    <div class="goods-made-in-oman m-0 mb-3">
+                        <p class="text-lg m-0 text-teal-600">Goods Made in Oman</p>
+                        <div class="score flex justify-between">
+                            <div class="left-score flex w-full">
+                                <p class="text-xl m-0 font-semibold">265.07</p>
+                                <p class="text-lg font-semibold text-slate-500 m-0 mt-1 pl-2">MIn</p>
+                            </div>
+                            <p class="text-xl m-0 font-semibold">82.55%</p>
+                        </div>
+                        <div class="lable w-full h-4 m-0 mb-4 p-0 rounded-lg bg-slate-300">
+                            <div class="available-lable h-4 w-4/5 p-0 m-0 rounded-lg bg-yellow-950">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="goods-non-made-in-oman m-0 mb-3">
+                        <p class="text-lg m-0 text-teal-600">Goods Non Made in Oman (NRS)</p>
+                        <div class="score flex justify-between">
+                            <div class="left-score flex w-full">
+                                <p class="text-xl m-0 font-semibold">41.63</p>
+                                <p class="text-lg font-semibold text-slate-500 m-0 mt-1 pl-2">MIn</p>
+                            </div>
+                            <p class="text-xl m-0 font-semibold">39.10%</p>
+                        </div>
+                        <div class="lable w-full h-4 m-0 mb-4 p-0 rounded-lg bg-slate-300">
+                            <div class="available-lable h-4 w-2/5 p-0 m-0 rounded-lg bg-yellow-700">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="goods-non-made-in-oman m-0 mb-3">
+                        <p class="text-lg m-0 text-teal-600">Goods Non Made in Oman (FRS)</p>
+                        <div class="score flex justify-between">
+                            <div class="left-score flex w-full">
+                                <p class="text-xl m-0 font-semibold">52.49</p>
+                                <p class="text-lg font-semibold text-slate-500 m-0 mt-1 pl-2">MIn</p>
+                            </div>
+                            <p class="text-xl m-0 font-semibold">48.70%</p>
+                        </div>
+                        <div class="lable w-full h-4 m-0 mb-4 p-0 rounded-lg bg-slate-300">
+                            <div class="available-lable h-4 w-1/2 p-0 m-0 rounded-lg bg-orange-300">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="goods-made-in-oman m-0 mb-3">
+                        <p class="text-lg m-0 text-teal-600">Services NRS</p>
+                        <div class="score flex justify-between">
+                            <div class="left-score flex w-full">
+                                <p class="text-xl m-0 font-semibold">52.18</p>
+                                <p class="text-lg font-semibold text-slate-500 m-0 mt-1 pl-2">MIn</p>
+                            </div>
+                            <p class="text-xl m-0 font-semibold">50.50%</p>
+                        </div>
+                        <div class="lable w-full h-4 m-0 mb-4 p-0 rounded-lg bg-slate-300">
+                            <div class="available-lable h-4 w-1/2 p-0 m-0 rounded-lg bg-slate-700">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="goods-made-in-oman m-0 mb-3">
+                        <p class="text-lg m-0 text-teal-600">Services FRS</p>
+                        <div class="score flex justify-between">
+                            <div class="left-score flex w-full">
+                                <p class="text-xl m-0 font-semibold">56.63</p>
+                                <p class="text-lg font-semibold text-slate-500 m-0 mt-1 pl-2">MIn</p>
+                            </div>
+                            <p class="text-xl m-0 font-semibold">28.57%</p>
+                        </div>
+                        <div class="lable w-full h-4 m-0 mb-4 p-0 rounded-lg bg-slate-300">
+                            <div class="available-lable h-4 w-1/3 p-0 m-0 rounded-lg bg-slate-950">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-contract-right w-8/12 ml-4">
+                <div class="other-spands justify-between flex">
+                    <div class="rdi-btm justify-around shadow-myshadow shadow-slate-300 p-3 rounded-md flex w-2/5">
+                        <div class="spend">
+                            <p class=" text-lg text-teal-600 m-0">RDI</p>
+                            <div class="vailu-score flex w-full">
+                                <p class="m-0 text-xl font-semibold">0</p>
+                            </div>
+                        </div>
+                        <div class="value ml-5">
+                            <p class="text-lg text-teal-600 m-0">BTM</p>
+                            <div class="vailu-score flex w-full">
+                                <p class="m-0 text-xl font-semibold">1</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rdi-btm justify-between shadow-myshadow shadow-slate-300 p-3 rounded-md flex w-2/5 ml-3">
+                        <div class="social-invastment-spend">
+                            <p class=" text-lg text-teal-600 m-0">Social Invastment Spend</p>
+                            <div class="vailu-score flex w-full">
+                                <p class="m-0 text-xl font-semibold">50.12</p>
+                                <p class="text-lg font-semibold text-slate-500 m-0 mt-1 pl-2">MIn</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rdi-btm justify-between shadow-myshadow shadow-slate-300 p-3 rounded-md w-1/5 flex ml-3">
+                        <div class="social-invastment-spend">
+                            <p class=" text-lg text-teal-600 m-0">Omanization(%)</p>
+                            <div class="vailu-score flex w-full">
+                                <p class="m-0 text-xl font-semibold">45%</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 icon icon-tabler icon-tabler-arrow-big-down-lines" width="25" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M15 12h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-3h6v3z" />
+                                    <path d="M15 3h-6" />
+                                    <path d="M15 6h-6" />
+                                  </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="other-spand-lable justify-between flex mt-3">
+                    <div class="other-spand-static p-3 w-lableWidth rounded-md shadow-myshadow shadow-slate-300">
+                        <div class="top-head flex justify-between">
+                            <div class="other-spend-static flex">
+                                <p class="text-xl font-semibold ">Other Spand Static</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 mt-2 icon icon-tabler icon-tabler-info-octagon" width="17" height="17" viewBox="0 0 24 24" stroke-width="1.5" stroke="#d2ba7a" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M9.103 2h5.794a3 3 0 0 1 2.122 .879l4.101 4.1a3 3 0 0 1 .88 2.125v5.794a3 3 0 0 1 -.879 2.122l-4.1 4.101a3 3 0 0 1 -2.123 .88h-5.795a3 3 0 0 1 -2.122 -.88l-4.101 -4.1a3 3 0 0 1 -.88 -2.124v-5.794a3 3 0 0 1 .879 -2.122l4.1 -4.101a3 3 0 0 1 2.125 -.88z" />
+                                    <path d="M12 9h.01" />
+                                    <path d="M11 12h1v4h1" />
+                                  </svg>
+                            </div>
+                            <p class="m-0 text-lg text-buttur">View Analytics</p>
+                        </div>
+                        <div class="chart1">
+                            <div>
+                                <canvasjs-chart [options]="chartOptions" [styles]="{width: '100%', height:'276px'}"></canvasjs-chart>    
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="other-spand-static p-3 w-2/5 rounded-md shadow-myshadow shadow-slate-300 ml-3">
+                        <div class="top-head flex justify-between">
+                            <div class="other-spend-static flex">
+                                <p class="text-xl font-semibold ">SME & Riyada Spend</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 mt-2 icon icon-tabler icon-tabler-info-octagon" width="17" height="17" viewBox="0 0 24 24" stroke-width="1.5" stroke="#d2ba7a" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                    <path d="M9.103 2h5.794a3 3 0 0 1 2.122 .879l4.101 4.1a3 3 0 0 1 .88 2.125v5.794a3 3 0 0 1 -.879 2.122l-4.1 4.101a3 3 0 0 1 -2.123 .88h-5.795a3 3 0 0 1 -2.122 -.88l-4.101 -4.1a3 3 0 0 1 -.88 -2.124v-5.794a3 3 0 0 1 .879 -2.122l4.1 -4.101a3 3 0 0 1 2.125 -.88z" />
+                                    <path d="M12 9h.01" />
+                                    <path d="M11 12h1v4h1" />
+                                  </svg>
+                            </div>
+                        </div>
+                        <div class="chart1">
+                            <div>
+                                <canvasjs-chart [options]="mychartOptions" [styles]="{width: '100%', height:'276px'}"></canvasjs-chart>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="icv-porformance w-full rounded-md shadow-myshadow shadow-slate-300 mt-3">
+                    <div class="top-head flex justify-between shadow-bottomShadow shadow-slate-300 p-3">
+                        <div class="other-spend-static flex">
+                            <p class="m-0 text-xl font-semibold ">ICV Porformance</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 mt-2 icon icon-tabler icon-tabler-info-octagon" width="17" height="17" viewBox="0 0 24 24" stroke-width="1.5" stroke="#d2ba7a" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M9.103 2h5.794a3 3 0 0 1 2.122 .879l4.101 4.1a3 3 0 0 1 .88 2.125v5.794a3 3 0 0 1 -.879 2.122l-4.1 4.101a3 3 0 0 1 -2.123 .88h-5.795a3 3 0 0 1 -2.122 -.88l-4.101 -4.1a3 3 0 0 1 -.88 -2.124v-5.794a3 3 0 0 1 .879 -2.122l4.1 -4.101a3 3 0 0 1 2.125 -.88z" />
+                                <path d="M12 9h.01" />
+                                <path d="M11 12h1v4h1" />
+                              </svg>
+                        </div>
+                        <p class="m-0 text-lg text-teal-600">Retainde values in %</p>
+                    </div>
+                    <div class="goods-services flex">
+                        <div class="goods p-3 w-1/2 shadow-rightbottomShadow shadow-slate-300">
+                            <div class="goods-head flex justify-between mb-2">
+                                <div class="head-left flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-table" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#009988" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <path d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14z" />
+                                        <path d="M3 10h18" />
+                                        <path d="M10 3v18" />
+                                      </svg>
+                                      <p class="m-0 text-xl font-semibold pl-3">Goods</p>
+                                </div>
+                                <p class="px-2 py-1 m-0 bg-teal-600 text-white text-lg rounded-md">90%</p>
+                            </div>
+                            <div class="goods-contant flex justify-between w-4/5">
+                                <div class="spend">
+                                    <p class=" text-lg text-teal-600 m-0">Total Spend</p>
+                                    <div class="vailu-score flex w-full">
+                                        <p class="m-0 text-xl font-semibold">50,000,000</p>
+                                    </div>
+                                </div>
+                                <div class="value ml-5">
+                                    <p class="text-lg text-teal-600 m-0">Retained Value/p>
+                                    <div class="vailu-score flex w-full">
+                                        <p class="m-0 text-xl font-semibold">45,000,000</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="goods w-1/2 p-3">
+                            <div class="goods-head flex justify-between mb-2">
+                                <div class="head-left flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#009988" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <path d="M11.646 20.965a1.67 1.67 0 0 1 -1.321 -1.282a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c.728 .177 1.154 .71 1.279 1.303" />
+                                        <path d="M14.985 11.694a3 3 0 1 0 -3.29 3.29" />
+                                        <path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                                        <path d="M20.2 20.2l1.8 1.8" />
+                                      </svg>
+                                      <p class="m-0 text-xl font-semibold pl-3">Services</p>
+                                </div>
+                                <p class="px-2 py-1 m-0 bg-teal-600 text-white text-lg rounded-md">56%</p>
+                            </div>
+                            <div class="goods-contant flex justify-between w-4/5">
+                                <div class="spend">
+                                    <p class=" text-lg text-teal-600 m-0">Total Spend</p>
+                                    <div class="vailu-score flex w-full">
+                                        <p class="m-0 text-xl font-semibold">45,500,000</p>
+                                    </div>
+                                </div>
+                                <div class="value ml-5">
+                                    <p class="text-lg text-teal-600 m-0">Retained Value</p>
+                                    <div class="vailu-score flex w-full">
+                                        <p class="m-0 text-xl font-semibold">25,500,000</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="workforce-investment flex">
+                        <div class="workforce p-3 w-1/2">
+                            <div class="goods-head flex justify-between mb-2">
+                                <div class="head-left flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-users-group" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#009988" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <path d="M10 13a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                                        <path d="M8 21v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1" />
+                                        <path d="M15 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                                        <path d="M17 10h2a2 2 0 0 1 2 2v1" />
+                                        <path d="M5 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                                        <path d="M3 13v-1a2 2 0 0 1 2 -2h2" />
+                                      </svg>
+                                      <p class="m-0 text-xl font-semibold pl-3">workforce</p>
+                                </div>
+                                <p class="px-2 py-1 m-0 bg-teal-600 text-white text-lg rounded-md">55%</p>
+                            </div>
+                            <div class="goods-contant flex justify-between w-4/5">
+                                <div class="spend">
+                                    <p class=" text-lg text-teal-600 m-0">Total Spend</p>
+                                    <div class="vailu-score flex w-full">
+                                        <p class="m-0 text-xl font-semibold">65,000,000</p>
+                                    </div>
+                                </div>
+                                <div class="value ml-5">
+                                    <p class="text-lg text-teal-600 m-0">Retained Value</p>
+                                    <div class="vailu-score flex w-full">
+                                        <p class="m-0 text-xl font-semibold">35,800,000</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="investment w-1/2 p-3 shadow-lefttopShadow shadow-slate-300">
+                            <div class="goods-head flex justify-between mb-2">
+                                <div class="head-left flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moneybag" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#009988" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                        <path d="M9.5 3h5a1.5 1.5 0 0 1 1.5 1.5a3.5 3.5 0 0 1 -3.5 3.5h-1a3.5 3.5 0 0 1 -3.5 -3.5a1.5 1.5 0 0 1 1.5 -1.5z" />
+                                        <path d="M4 17v-1a8 8 0 1 1 16 0v1a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
+                                      </svg>
+                                      <p class="m-0 text-xl font-semibold pl-3">Investment</p>
+                                </div>
+                                <p class="px-2 py-1 m-0 bg-teal-600 text-white text-lg rounded-md">40%</p>
+                            </div>
+                            <div class="goods-contant flex justify-between w-4/5">
+                                <div class="spend">
+                                    <p class=" text-lg text-teal-600 m-0">Total Spend</p>
+                                    <div class="vailu-score flex w-full">
+                                        <p class="m-0 text-xl font-semibold">15,200,000</p>
+                                    </div>
+                                </div>
+                                <div class="value ml-5">
+                                    <p class="text-lg text-teal-600 m-0">Retained Value</p>
+                                    <div class="vailu-score flex w-full">
+                                        <p class="m-0 text-xl font-semibold">6,200,000</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="performance mt-3 flex w-full mb-14">
+            <div class="holding-errformance shadow-myshadow rounded-md w-full h-myheight overflow-y-scroll shadow-slate-300">
+                <!-- <div class="top-head p-3 flex justify-between">
+                    <div class="other-spend-static flex">
+                        <p class="text-xl font-semibold ">Holding Companies Performance</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 mt-2 icon icon-tabler icon-tabler-info-octagon" width="17" height="17" viewBox="0 0 24 24" stroke-width="1.5" stroke="#d2ba7a" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M9.103 2h5.794a3 3 0 0 1 2.122 .879l4.101 4.1a3 3 0 0 1 .88 2.125v5.794a3 3 0 0 1 -.879 2.122l-4.1 4.101a3 3 0 0 1 -2.123 .88h-5.795a3 3 0 0 1 -2.122 -.88l-4.101 -4.1a3 3 0 0 1 -.88 -2.124v-5.794a3 3 0 0 1 .879 -2.122l4.1 -4.101a3 3 0 0 1 2.125 -.88z" />
+                            <path d="M12 9h.01" />
+                            <path d="M11 12h1v4h1" />
+                          </svg>
+                    </div>
+                    <div class="search-bar flex items-center border-1 px-1 rounded-xl h-7">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer icon icon-tabler icon-tabler-search" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                            <path d="M21 21l-6 -6" />
+                        </svg>
+                        <input class="ml-3" type="text" placeholder="Search by Company Name.." name="search">
+                    </div>
+                </div> -->
+                <!-- <div class="lable flex justify-between px-3 w-full mt-4 shadow-bottomShadow shadow-slate-300">
+                    <div class="company-name w-1/2 mb-1">
+                        <p class="text-lg m-0 font-semibold">Company Name</p>
+                    </div>
+                    <div class="performance w-minwidth">
+                        <p class="text-lg m-0 font-semibold text-end">performance (%)</p>
+                    </div>
+                    <div class="icv-ranking w-1/5">
+                        <p class="text-lg m-0 font-semibold text-end">ICV Ranking</p>
+                    </div>
+                </div> -->
+                <!-- <div class="contant1 flex justify-between px-3 py-2 w-full shadow-bottomShadow shadow-slate-300">
+                    <div class="company w-1/2 mb-1">
+                        <div class="img flex">
+                            <img class="w-12 mt-1 h-12 rounded-full border-2 border-slate-400" src="assets/img/company.jpg" alt="">
+                            <p class="text-lg m-0 font-medium text-center pl-2 mt-3">OQ</p>
+                        </div>
+                    </div>
+                    <div class="performance-text w-minwidth">
+                        <p class="text-lg m-0 text-end mt-3">90%</p>
+                    </div>
+                    <div class="icv-ranking w-1/5 flex justify-end">
+                        <p class="text-2xl m-0 font-normal mt-3 pr-1 text-buttur">1</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class=" mt-2 icon icon-tabler icon-tabler-arrow-big-up-lines" width="25" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#3c8f3d" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M9 12h-3.586a1 1 0 0 1 -.707 -1.707l6.586 -6.586a1 1 0 0 1 1.414 0l6.586 6.586a1 1 0 0 1 -.707 1.707h-3.586v3h-6v-3z" />
+                            <path d="M9 21h6" />
+                            <path d="M9 18h6" />
+                          </svg>
+                    </div>
+                </div> -->
+                <!-- <div class="contant2 flex justify-between px-3 py-2 w-full shadow-bottomShadow shadow-slate-300">
+                    <div class="company w-1/2 mb-1">
+                        <div class="img flex">
+                            <img class="w-12 mt-1 h-12 rounded-full border-2 border-slate-400" src="assets/img/company2.jpg" alt="">
+                            <p class="text-lg m-0 font-medium text-center pl-2 mt-3">Oman Tourism Development</p>
+                        </div>
+                    </div>
+                    <div class="performance-text w-minwidth">
+                        <p class="text-lg m-0 text-end mt-3">80%</p>
+                    </div>
+                    <div class="icv-ranking w-1/5 flex justify-end">
+                        <p class="text-2xl m-0 font-normal mt-3 pr-1 text-buttur">2</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mt-2 icon icon-tabler icon-tabler-arrow-big-down-lines" width="25" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M15 12h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-3h6v3z" />
+                            <path d="M15 3h-6" />
+                            <path d="M15 6h-6" />
+                          </svg>
+                    </div>
+                </div> -->
+                <!-- <div class="contant3 flex justify-between px-3 py-2 w-full shadow-bottomShadow shadow-slate-300">
+                    <div class="company w-1/2 mb-1">
+                        <div class="img flex">
+                            <img class="w-12 mt-1 h-12 rounded-full border-2 border-slate-400" src="assets/img/company3.jpg" alt="">
+                            <p class="text-lg m-0 font-medium text-center pl-2 mt-3">Asayad</p>
+                        </div>
+                    </div>
+                    <div class="performance-text w-minwidth">
+                        <p class="text-lg m-0 text-end mt-3">66%</p>
+                    </div>
+                    <div class="icv-ranking w-1/5 flex justify-end">
+                        <p class="text-2xl m-0 font-normal mt-3 pr-1 text-buttur">3</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mt-2 icon icon-tabler icon-tabler-arrow-big-down-lines" width="25" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M15 12h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-3h6v3z" />
+                            <path d="M15 3h-6" />
+                            <path d="M15 6h-6" />
+                          </svg>
+                    </div>
+                </div> -->
+                <!-- <div class="contant4 flex justify-between px-3 py-2 w-full shadow-bottomShadow shadow-slate-300">
+                    <div class="company w-1/2 mb-1">
+                        <div class="img flex">
+                            <img class="w-12 mt-1 h-12 rounded-full border-2 border-slate-400" src="assets/img/company4.jpg" alt="">
+                            <p class="text-lg m-0 font-medium text-center pl-2 mt-3">Nama</p>
+                        </div>
+                    </div>
+                    <div class="performance-text w-minwidth">
+                        <p class="text-lg m-0 text-end mt-3">80%</p>
+                    </div>
+                    <div class="icv-ranking w-1/5 flex justify-end">
+                        <p class="text-2xl m-0 font-normal mt-3 pr-1 text-buttur">4</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mt-2 icon icon-tabler icon-tabler-arrow-big-down-lines" width="25" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M15 12h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-3h6v3z" />
+                            <path d="M15 3h-6" />
+                            <path d="M15 6h-6" />
+                          </svg>
+                    </div>
+                </div> -->
+                <!-- <div class="contant5 flex justify-between px-3 py-2 w-full shadow-bottomShadow shadow-slate-300">
+                    <div class="company w-1/2 mb-1">
+                        <div class="img flex">
+                            <img class="w-12 mt-1 h-12 rounded-full border-2 border-slate-400" src="assets/img/company5.jpg" alt="">
+                            <p class="text-lg m-0 font-medium text-center pl-2 mt-3">Fisheries Development Oman</p>
+                        </div>
+                    </div>
+                    <div class="performance-text w-minwidth">
+                        <p class="text-lg m-0 text-end mt-3">66%</p>
+                    </div>
+                    <div class="icv-ranking w-1/5 flex justify-end">
+                        <p class="text-2xl m-0 font-normal mt-3 pr-1 text-buttur">5</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mt-2 icon icon-tabler icon-tabler-arrow-big-down-lines" width="25" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M15 12h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-3h6v3z" />
+                            <path d="M15 3h-6" />
+                            <path d="M15 6h-6" />
+                          </svg>
+                    </div>
+                </div> -->
+                <!-- <div class="contant6 flex justify-between px-3 py-2 w-full shadow-bottomShadow shadow-slate-300">
+                    <div class="company w-1/2 mb-1">
+                        <div class="img flex">
+                            <img class="w-12 mt-1 h-12 rounded-full border-2 border-slate-400" src="assets/img/company6.jpg" alt="">
+                            <p class="text-lg m-0 font-medium text-center pl-2 mt-3">Company</p>
+                        </div>
+                    </div>
+                    <div class="performance-text w-minwidth">
+                        <p class="text-lg m-0 text-end mt-3">52%</p>
+                    </div>
+                    <div class="icv-ranking w-1/5 flex justify-end">
+                        <p class="text-2xl m-0 font-normal mt-3 pr-1 text-buttur">6</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mt-2 icon icon-tabler icon-tabler-arrow-big-down-lines" width="25" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M15 12h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-3h6v3z" />
+                            <path d="M15 3h-6" />
+                            <path d="M15 6h-6" />
+                          </svg>
+                    </div>
+                </div> -->
+                <!-- <div class="contant7 flex justify-between px-3 py-2 w-full shadow-bottomShadow shadow-slate-300">
+                    <div class="company w-1/2 mb-1">
+                        <div class="img flex">
+                            <img class="w-12 mt-1 h-12 rounded-full border-2 border-slate-400" src="assets/img/company7.jpg" alt="">
+                            <p class="text-lg m-0 font-medium text-center pl-2 mt-3">Tiseries</p>
+                        </div>
+                    </div>
+                    <div class="performance-text w-minwidth">
+                        <p class="text-lg m-0 text-end mt-3">93%</p>
+                    </div>
+                    <div class="icv-ranking w-1/5 flex justify-end">
+                        <p class="text-2xl m-0 font-normal mt-3 pr-1 text-buttur">7</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mt-2 icon icon-tabler icon-tabler-arrow-big-down-lines" width="25" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M15 12h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-3h6v3z" />
+                            <path d="M15 3h-6" />
+                            <path d="M15 6h-6" />
+                          </svg>
+                    </div>
+                </div> -->
+                <!-- <div class="contant8 flex justify-between px-3 py-2 w-full shadow-bottomShadow shadow-slate-300">
+                    <div class="company w-1/2 mb-1">
+                        <div class="img flex">
+                            <img class="w-12 mt-1 h-12 rounded-full border-2 border-slate-400" src="assets/img/company8.jpg" alt="">
+                            <p class="text-lg m-0 font-medium text-center pl-2 mt-3">China Global</p>
+                        </div>
+                    </div>
+                    <div class="performance-text w-minwidth">
+                        <p class="text-lg m-0 text-end mt-3">46%</p>
+                    </div>
+                    <div class="icv-ranking w-1/5 flex justify-end">
+                        <p class="text-2xl m-0 font-normal mt-3 pr-1 text-buttur">8</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mt-2 icon icon-tabler icon-tabler-arrow-big-down-lines" width="25" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M15 12h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-3h6v3z" />
+                            <path d="M15 3h-6" />
+                            <path d="M15 6h-6" />
+                          </svg>
+                    </div>
+                </div> -->
+                <!-- <div class="contant9 flex justify-between px-3 py-2 w-full shadow-bottomShadow shadow-slate-300">
+                    <div class="company w-1/2 mb-1">
+                        <div class="img flex">
+                            <img class="w-12 mt-1 h-12 rounded-full border-2 border-slate-400" src="assets/img/company9.jpg" alt="">
+                            <p class="text-lg m-0 font-medium text-center pl-2 mt-3">ween</p>
+                        </div>
+                    </div>
+                    <div class="performance-text w-minwidth">
+                        <p class="text-lg m-0 text-end mt-3">75%</p>
+                    </div>
+                    <div class="icv-ranking w-1/5 flex justify-end">
+                        <p class="text-2xl m-0 font-normal mt-3 pr-1 text-buttur">9</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mt-2 icon icon-tabler icon-tabler-arrow-big-down-lines" width="25" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M15 12h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-3h6v3z" />
+                            <path d="M15 3h-6" />
+                            <path d="M15 6h-6" />
+                          </svg>
+                    </div>
+                </div> -->
+                <!-- <div class="contant10 flex justify-between px-3 py-2 w-full shadow-bottomShadow shadow-slate-300">
+                    <div class="company w-1/2 mb-1">
+                        <div class="img flex">
+                            <img class="w-12 mt-1 h-12 rounded-full border-2 border-slate-400" src="assets/img/company10.jpg" alt="">
+                            <p class="text-lg m-0 font-medium text-center pl-2 mt-3">CNW</p>
+                        </div>
+                    </div>
+                    <div class="performance-text w-minwidth">
+                        <p class="text-lg m-0 text-end mt-3">38%</p>
+                    </div>
+                    <div class="icv-ranking w-1/5 flex justify-end">
+                        <p class="text-2xl m-0 font-normal mt-3 pr-1 text-buttur">10</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mt-2 icon icon-tabler icon-tabler-arrow-big-down-lines" width="25" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M15 12h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-3h6v3z" />
+                            <path d="M15 3h-6" />
+                            <path d="M15 6h-6" />
+                          </svg>
+                    </div>
+                </div> -->
+                <!-- <div class="contant11 flex justify-between px-3 py-2 w-full shadow-bottomShadow shadow-slate-300">
+                    <div class="company w-1/2 mb-1">
+                        <div class="img flex">
+                            <img class="w-12 mt-1 h-12 rounded-full border-2 border-slate-400" src="assets/img/company11.jpg" alt="">
+                            <p class="text-lg m-0 font-medium text-center pl-2 mt-3">Gobal India</p>
+                        </div>
+                    </div>
+                    <div class="performance-text w-minwidth">
+                        <p class="text-lg m-0 text-end mt-3">86%</p>
+                    </div>
+                    <div class="icv-ranking w-1/5 flex justify-end">
+                        <p class="text-2xl m-0 font-normal mt-3 pr-1 text-buttur">11</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mt-2 icon icon-tabler icon-tabler-arrow-big-down-lines" width="25" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M15 12h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-3h6v3z" />
+                            <path d="M15 3h-6" />
+                            <path d="M15 6h-6" />
+                          </svg>
+                    </div>
+                </div> -->
+                <!-- <div class="contant12 flex justify-between px-3 py-2 w-full">
+                    <div class="company w-1/2 mb-1">
+                        <div class="img flex">
+                            <img class="w-12 mt-1 h-12 rounded-full border-2 border-slate-400" src="assets/img/company12.jpg" alt="">
+                            <p class="text-lg m-0 font-medium text-center pl-2 mt-3">Quera</p>
+                        </div>
+                    </div>
+                    <div class="performance-text w-minwidth">
+                        <p class="text-lg m-0 text-end mt-3">63%</p>
+                    </div>
+                    <div class="icv-ranking w-1/5 flex justify-end">
+                        <p class="text-2xl m-0 font-normal mt-3 pr-1 text-buttur">12</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mt-2 icon icon-tabler icon-tabler-arrow-big-down-lines" width="25" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M15 12h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-3h6v3z" />
+                            <path d="M15 3h-6" />
+                            <path d="M15 6h-6" />
+                          </svg>
+                    </div>
+                </div> -->
+                
+                <app-table></app-table>
+            </div>
+            <div class="selector-performance w-full rounded-md shadow-myshadow h-myheight overflow-y-scroll shadow-slate-300 ml-3">
+                <!-- <div class="top-head p-3 flex justify-between">
+                    <div class="other-spend-static flex">
+                        <p class="text-xl font-semibold ">Sectors Performance</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 mt-2 icon icon-tabler icon-tabler-info-octagon" width="17" height="17" viewBox="0 0 24 24" stroke-width="1.5" stroke="#d2ba7a" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M9.103 2h5.794a3 3 0 0 1 2.122 .879l4.101 4.1a3 3 0 0 1 .88 2.125v5.794a3 3 0 0 1 -.879 2.122l-4.1 4.101a3 3 0 0 1 -2.123 .88h-5.795a3 3 0 0 1 -2.122 -.88l-4.101 -4.1a3 3 0 0 1 -.88 -2.124v-5.794a3 3 0 0 1 .879 -2.122l4.1 -4.101a3 3 0 0 1 2.125 -.88z" />
+                            <path d="M12 9h.01" />
+                            <path d="M11 12h1v4h1" />
+                          </svg>
+                    </div>
+                    <div class="search-bar flex items-center border-1 px-1 rounded-xl h-7">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="cursor-pointer icon icon-tabler icon-tabler-search" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                            <path d="M21 21l-6 -6" />
+                        </svg>
+                        <input class="ml-3" type="text" placeholder="Search by Company Name.." name="search">
+                    </div>
+                </div> -->
+                <!-- <div class="lable flex justify-between px-3 w-full mt-4 shadow-bottomShadow shadow-slate-300">
+                    <div class="company-name w-1/2 mb-1">
+                        <p class="text-lg m-0 font-semibold">Sectors Name</p>
+                    </div>
+                    <div class="performance w-minwidth">
+                        <p class="text-lg m-0 font-semibold text-end">performance (%)</p>
+                    </div>
+                    <div class="icv-ranking w-1/5">
+                        <p class="text-lg m-0 font-semibold text-end">ICV Ranking</p>
+                    </div>
+                </div> -->
+                <!-- <div class="contant1 flex justify-between px-3 py-2 w-full shadow-bottomShadow shadow-slate-300">
+                    <div class="company w-1/2 mb-1">
+                        <div class="img flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mt-3 icon icon-tabler icon-tabler-bolt" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M13 3l0 7l6 0l-8 11l0 -7l-6 0l8 -11" />
+                              </svg>
+                            <p class="text-lg m-0 font-medium text-center pl-2 mt-3">Energy</p>
+                        </div>
+                    </div>
+                    <div class="performance-text w-minwidth">
+                        <p class="text-lg m-0 text-end mt-3">90%</p>
+                    </div>
+                    <div class="icv-ranking w-1/5 flex justify-end">
+                        <p class="text-2xl m-0 font-normal mt-3 pr-1 text-buttur">1</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class=" mt-2 icon icon-tabler icon-tabler-arrow-big-up-lines" width="25" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#3c8f3d" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M9 12h-3.586a1 1 0 0 1 -.707 -1.707l6.586 -6.586a1 1 0 0 1 1.414 0l6.586 6.586a1 1 0 0 1 -.707 1.707h-3.586v3h-6v-3z" />
+                            <path d="M9 21h6" />
+                            <path d="M9 18h6" />
+                          </svg>
+                    </div>
+                </div> -->
+                <!-- <div class="contant2 flex justify-between px-3 py-2 w-full shadow-bottomShadow shadow-slate-300">
+                    <div class="company w-1/2 mb-1">
+                        <div class="img flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mt-3 icon icon-tabler icon-tabler-beach" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M17.553 16.75a7.5 7.5 0 0 0 -10.606 0" />
+                                <path d="M18 3.804a6 6 0 0 0 -8.196 2.196l10.392 6a6 6 0 0 0 -2.196 -8.196z" />
+                                <path d="M16.732 10c1.658 -2.87 2.225 -5.644 1.268 -6.196c-.957 -.552 -3.075 1.326 -4.732 4.196" />
+                                <path d="M15 9l-3 5.196" />
+                                <path d="M3 19.25a2.4 2.4 0 0 1 1 -.25a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 2 1a2.4 2.4 0 0 0 2 1a2.4 2.4 0 0 0 2 -1a2.4 2.4 0 0 1 2 -1a2.4 2.4 0 0 1 1 .25" />
+                              </svg>
+                            <p class="text-lg m-0 font-medium text-center pl-2 mt-3">Tourism & Hospitality</p>
+                        </div>
+                    </div>
+                    <div class="performance-text w-minwidth">
+                        <p class="text-lg m-0 text-end mt-3">80%</p>
+                    </div>
+                    <div class="icv-ranking w-1/5 flex justify-end">
+                        <p class="text-2xl m-0 font-normal mt-3 pr-1 text-buttur">2</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mt-2 icon icon-tabler icon-tabler-arrow-big-down-lines" width="25" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M15 12h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-3h6v3z" />
+                            <path d="M15 3h-6" />
+                            <path d="M15 6h-6" />
+                          </svg>
+                    </div>
+                </div> -->
+                <!-- <div class="contant3 flex justify-between px-3 py-2 w-full shadow-bottomShadow shadow-slate-300">
+                    <div class="company w-1/2 mb-1">
+                        <div class="img flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mt-3 icon icon-tabler icon-tabler-axe" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M13 9l7.383 7.418c.823 .82 .823 2.148 0 2.967a2.11 2.11 0 0 1 -2.976 0l-7.407 -7.385" />
+                                <path d="M6.66 15.66l-3.32 -3.32a1.25 1.25 0 0 1 .42 -2.044l3.24 -1.296l6 -6l3 3l-6 6l-1.296 3.24a1.25 1.25 0 0 1 -2.044 .42z" />
+                              </svg>
+                            <p class="text-lg m-0 font-medium text-center pl-2 mt-3">Mining</p>
+                        </div>
+                    </div>
+                    <div class="performance-text w-minwidth">
+                        <p class="text-lg m-0 text-end mt-3">66%</p>
+                    </div>
+                    <div class="icv-ranking w-1/5 flex justify-end">
+                        <p class="text-2xl m-0 font-normal mt-3 pr-1 text-buttur">3</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mt-2 icon icon-tabler icon-tabler-arrow-big-down-lines" width="25" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M15 12h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-3h6v3z" />
+                            <path d="M15 3h-6" />
+                            <path d="M15 6h-6" />
+                          </svg>
+                    </div>
+                </div> -->
+                <!-- <div class="contant4 flex justify-between px-3 py-2 w-full shadow-bottomShadow shadow-slate-300">
+                    <div class="company w-1/2 mb-1">
+                        <div class="img flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mt-3 icon icon-tabler icon-tabler-school" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6" />
+                                <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" />
+                              </svg>
+                            <p class="text-lg m-0 font-medium text-center pl-2 mt-3">Education</p>
+                        </div>
+                    </div>
+                    <div class="performance-text w-minwidth">
+                        <p class="text-lg m-0 text-end mt-3">80%</p>
+                    </div>
+                    <div class="icv-ranking w-1/5 flex justify-end">
+                        <p class="text-2xl m-0 font-normal mt-3 pr-1 text-buttur">4</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mt-2 icon icon-tabler icon-tabler-arrow-big-down-lines" width="25" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M15 12h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-3h6v3z" />
+                            <path d="M15 3h-6" />
+                            <path d="M15 6h-6" />
+                          </svg>
+                    </div>
+                </div> -->
+                <!-- <div class="contant5 flex justify-between px-3 py-2 w-full shadow-bottomShadow shadow-slate-300">
+                    <div class="company w-1/2 mb-1">
+                        <div class="img flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mt-3 icon icon-tabler icon-tabler-truck" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                                <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                                <path d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" />
+                              </svg>
+                            <p class="text-lg m-0 font-medium text-center pl-2 mt-3">Transportation & Warehousing</p>
+                        </div>
+                    </div>
+                    <div class="performance-text w-minwidth">
+                        <p class="text-lg m-0 text-end mt-3">66%</p>
+                    </div>
+                    <div class="icv-ranking w-1/5 flex justify-end">
+                        <p class="text-2xl m-0 font-normal mt-3 pr-1 text-buttur">5</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mt-2 icon icon-tabler icon-tabler-arrow-big-down-lines" width="25" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M15 12h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-3h6v3z" />
+                            <path d="M15 3h-6" />
+                            <path d="M15 6h-6" />
+                          </svg>
+                    </div>
+                </div> -->
+                <!-- <div class="contant6 flex justify-between px-3 py-2 w-full shadow-bottomShadow shadow-slate-300">
+                    <div class="company w-1/2 mb-1">
+                        <div class="img flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mt-3 icon icon-tabler icon-tabler-backpack" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M5 18v-6a6 6 0 0 1 6 -6h2a6 6 0 0 1 6 6v6a3 3 0 0 1 -3 3h-8a3 3 0 0 1 -3 -3z" />
+                            <path d="M10 6v-1a2 2 0 1 1 4 0v1" />
+                            <path d="M9 21v-4a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v4" />
+                            <path d="M11 10h2" />
+                            </svg>
+                            <p class="text-lg m-0 font-medium text-center pl-2 mt-3">Company</p>
+                        </div>
+                    </div>
+                    <div class="performance-text w-minwidth">
+                        <p class="text-lg m-0 text-end mt-3">52%</p>
+                    </div>
+                    <div class="icv-ranking w-1/5 flex justify-end">
+                        <p class="text-2xl m-0 font-normal mt-3 pr-1 text-buttur">6</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mt-2 icon icon-tabler icon-tabler-arrow-big-down-lines" width="25" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M15 12h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-3h6v3z" />
+                            <path d="M15 3h-6" />
+                            <path d="M15 6h-6" />
+                          </svg>
+                    </div>
+                </div> -->
+                <!-- <div class="contant7 flex justify-between px-3 py-2 w-full shadow-bottomShadow shadow-slate-300">
+                    <div class="company w-1/2 mb-1">
+                        <div class="img flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mt-3 icon icon-tabler icon-tabler-brand-linktree" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M9 3l-7 12h3v5h5v-5h-2l4 -7z" />
+                                <path d="M15 3l7 12h-3v5h-5v-5h2l-4 -7z" />
+                            </svg>
+                            <p class="text-lg m-0 font-medium text-center pl-2 mt-3">Tiseries</p>
+                        </div>
+                    </div>
+                    <div class="performance-text w-minwidth">
+                        <p class="text-lg m-0 text-end mt-3">93%</p>
+                    </div>
+                    <div class="icv-ranking w-1/5 flex justify-end">
+                        <p class="text-2xl m-0 font-normal mt-3 pr-1 text-buttur">7</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mt-2 icon icon-tabler icon-tabler-arrow-big-down-lines" width="25" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M15 12h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-3h6v3z" />
+                            <path d="M15 3h-6" />
+                            <path d="M15 6h-6" />
+                          </svg>
+                    </div>
+                </div> -->
+                <!-- <div class="contant8 flex justify-between px-3 py-2 w-full shadow-bottomShadow shadow-slate-300">
+                    <div class="company w-1/2 mb-1">
+                        <div class="img flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mt-3 icon icon-tabler icon-tabler-crystal-ball" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M6.73 17.018a8 8 0 1 1 10.54 0" />
+                            <path d="M5 19a2 2 0 0 0 2 2h10a2 2 0 1 0 0 -4h-10a2 2 0 0 0 -2 2z" />
+                            <path d="M11 7a3 3 0 0 0 -3 3" />
+                            </svg>
+                            <p class="text-lg m-0 font-medium text-center pl-2 mt-3">China Global</p>
+                        </div>
+                    </div>
+                    <div class="performance-text w-minwidth">
+                        <p class="text-lg m-0 text-end mt-3">46%</p>
+                    </div>
+                    <div class="icv-ranking w-1/5 flex justify-end">
+                        <p class="text-2xl m-0 font-normal mt-3 pr-1 text-buttur">8</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mt-2 icon icon-tabler icon-tabler-arrow-big-down-lines" width="25" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M15 12h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-3h6v3z" />
+                            <path d="M15 3h-6" />
+                            <path d="M15 6h-6" />
+                          </svg>
+                    </div>
+                </div> -->
+                <!-- <div class="contant9 flex justify-between px-3 py-2 w-full shadow-bottomShadow shadow-slate-300">
+                    <div class="company w-1/2 mb-1">
+                        <div class="img flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mt-3 icon icon-tabler icon-tabler-lighter" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M10 3v16a2 2 0 0 0 2 2h5a2 2 0 0 0 2 -2v-7h-12a2 2 0 0 1 -2 -2v-5a2 2 0 0 1 2 -2h3z" />
+                            <path d="M16 4l1.465 1.638a2 2 0 1 1 -3.015 .099l1.55 -1.737z" />
+                            </svg>
+                            <p class="text-lg m-0 font-medium text-center pl-2 mt-3">ween</p>
+                        </div>
+                    </div>
+                    <div class="performance-text w-minwidth">
+                        <p class="text-lg m-0 text-end mt-3">75%</p>
+                    </div>
+                    <div class="icv-ranking w-1/5 flex justify-end">
+                        <p class="text-2xl m-0 font-normal mt-3 pr-1 text-buttur">9</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mt-2 icon icon-tabler icon-tabler-arrow-big-down-lines" width="25" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M15 12h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-3h6v3z" />
+                            <path d="M15 3h-6" />
+                            <path d="M15 6h-6" />
+                          </svg>
+                    </div>
+                </div> -->
+                <!-- <div class="contant10 flex justify-between px-3 py-2 w-full shadow-bottomShadow shadow-slate-300">
+                    <div class="company w-1/2 mb-1">
+                        <div class="img flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mt-3 icon icon-tabler icon-tabler-mailbox" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M10 21v-6.5a3.5 3.5 0 0 0 -7 0v6.5h18v-6a4 4 0 0 0 -4 -4h-10.5" />
+                            <path d="M12 11v-8h4l2 2l-2 2h-4" />
+                            <path d="M6 15h1" />
+                            </svg>
+                            <p class="text-lg m-0 font-medium text-center pl-2 mt-3">CNW</p>
+                        </div>
+                    </div>
+                    <div class="performance-text w-minwidth">
+                        <p class="text-lg m-0 text-end mt-3">38%</p>
+                    </div>
+                    <div class="icv-ranking w-1/5 flex justify-end">
+                        <p class="text-2xl m-0 font-normal mt-3 pr-1 text-buttur">10</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mt-2 icon icon-tabler icon-tabler-arrow-big-down-lines" width="25" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M15 12h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-3h6v3z" />
+                            <path d="M15 3h-6" />
+                            <path d="M15 6h-6" />
+                          </svg>
+                    </div>
+                </div> -->
+                <!-- <div class="contant11 flex justify-between px-3 py-2 w-full shadow-bottomShadow shadow-slate-300"> 
+                    <div class="company w-1/2 mb-1">
+                        <div class="img flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mt-3 icon icon-tabler icon-tabler-sandbox" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M19.953 8.017l1.047 6.983v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3v-2l1.245 -8.297a2 2 0 0 1 1.977 -1.703h3.778" />
+                            <path d="M3 15h18" />
+                            <path d="M13 3l5.5 1.5" />
+                            <path d="M15.75 3.75l-2 7" />
+                            <path d="M7 10.5c1.667 -.667 3.333 -.667 5 0c1.667 .667 3.333 .667 5 0" />
+                            </svg>
+                            <p class="text-lg m-0 font-medium text-center pl-2 mt-3">Gobal India</p>
+                        </div>
+                    </div>
+                    <div class="performance-text w-minwidth">
+                        <p class="text-lg m-0 text-end mt-3">86%</p>
+                    </div>
+                    <div class="icv-ranking w-1/5 flex justify-end">
+                        <p class="text-2xl m-0 font-normal mt-3 pr-1 text-buttur">11</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mt-2 icon icon-tabler icon-tabler-arrow-big-down-lines" width="25" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M15 12h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-3h6v3z" />
+                            <path d="M15 3h-6" />
+                            <path d="M15 6h-6" />
+                          </svg>
+                    </div>
+                </div> -->
+                <!-- <div class="contant12 flex justify-between px-3 py-2 w-full">
+                    <div class="company w-1/2 mb-1">
+                        <div class="img flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mt-3 icon icon-tabler icon-tabler-umbrella" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M4 12a8 8 0 0 1 16 0z" />
+                            <path d="M12 12v6a2 2 0 0 0 4 0" />
+                            </svg>
+                            <p class="text-lg m-0 font-medium text-center pl-2 mt-3">Quera</p>
+                        </div>
+                    </div>
+                    <div class="performance-text w-minwidth">
+                        <p class="text-lg m-0 text-end mt-3">63%</p>
+                    </div>
+                    <div class="icv-ranking w-1/5 flex justify-end">
+                        <p class="text-2xl m-0 font-normal mt-3 pr-1 text-buttur">12</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mt-2 icon icon-tabler icon-tabler-arrow-big-down-lines" width="25" height="50" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M15 12h3.586a1 1 0 0 1 .707 1.707l-6.586 6.586a1 1 0 0 1 -1.414 0l-6.586 -6.586a1 1 0 0 1 .707 -1.707h3.586v-3h6v3z" />
+                            <path d="M15 3h-6" />
+                            <path d="M15 6h-6" />
+                          </svg>
+                    </div>
+                </div> -->
+                <app-selector-table></app-selector-table>
+            </div>
+        </div>
+
+
+        <!-- <app-table></app-table> -->
+
+
+        <div class="footer mt-10 mb-40 w-full">
+            <p class="text-lg text-slate-400 font-medium">Copyright © 2023 All rights reserved by Oman Investment Authority. Sultanate of Oman.</p>
+        </div>
+    </div>
+</mat-sidenav-container>

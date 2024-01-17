@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'oia-dashboard-responsive';
+  title = 'oia-dashboard';
+  isSidenavExpanded = true;
+
+  toggleSidenav() {
+    this.isSidenavExpanded = !this.isSidenavExpanded;
+  }
 }
