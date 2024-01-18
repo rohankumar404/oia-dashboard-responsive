@@ -7,7 +7,7 @@ module.exports = {
         buttur: "#d2ba7a",
       },
       width: {
-        mywidth: "28%",
+        mywidth: "29%",
         lableWidth: "58%",
         minwidth: "30%",
         containerWidth: "86%",
