@@ -1,27 +1,53 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild, HostListener } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
-  selector: 'app-sidenav',
-  templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.css']
+   selector: 'app-sidenav',
+   templateUrl: './sidenav.component.html',
+   styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent {
   @ViewChild('sidenav') sidenav!: MatSidenav;
   @Input() isExpanded = true;
-  showSubmenu: boolean = false;
+  showSubmenu = false;
   isShowing = false;
-  showSubSubMenu: boolean = false;
+  showSubSubMenu = false;
 
-  mouseenter() {
-    if (!this.isExpanded) {
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.updateSidenavMode();
+  }
+
+  mouseenter(): void {
+    if (this.isMediumScreen()) {
       this.isShowing = true;
     }
   }
 
-  mouseleave() {
-    if (!this.isExpanded) {
+  mouseleave(): void {
+    if (this.isMediumScreen()) {
       this.isShowing = false;
+    }
+  }
+
+  private isMediumScreen(): boolean {
+    return window.innerWidth >= 640 && window.innerWidth < 1024 && !this.isExpanded;
+  }
+
+
+  updateSidenavMode(): void {
+    if (this.isMediumScreen()) {
+      this.sidenav.mode = 'side';
+      this.sidenav.open(); 
+    } else if (window.innerWidth >= 1024) {
+      this.sidenav.mode = 'over';
+      this.sidenav.open();
+      this.isShowing = true; 
+    } else {
+      this.sidenav.mode = 'over';
+      this.sidenav.close();
+      this.isShowing = false; 
     }
   }
 

@@ -1,82 +1,82 @@
 <div fxFlex="100" fxLayout="row" class="p-2 shadow-sm bg-white">
-    <button fxHide.gt-sm="full" mat-icon-button (click)="toggleSidenav()">
-      <mat-icon class="w-5">menu</mat-icon>
-    </button>
-      <div class="" fxFlex="55" fxFlex.lt-md="30"  fxLayout="row">
-        <div class="images items-center" fxFlex="100">
-          <div class="img1">
-            <img class="w-44 w-sm-40" src="assets/img/logo.png" alt="">
-          </div>
-          <div class="img2 border-l border-slate-200" fxFlex="100"  fxHide.lt-md="full">
-            <img class=" w-64" src="assets/img/oia.png" alt="">
-          </div>
+  <button fxHide.gt-xs="full" fxShow.lt-xs="full" mat-icon-button (click)="toggleSidenav()">
+    <mat-icon class="w-5">menu</mat-icon>
+</button>
+    <div class="" fxFlex="55" fxFlex.lt-md="30"  fxLayout="row">
+      <div class="images items-center" fxFlex="100">
+        <div class="img1">
+          <img class="w-44 w-sm-40" src="assets/img/logo.png" alt="">
+        </div>
+        <div class="img2 border-l border-slate-200" fxFlex="100"  fxHide.lt-md="full">
+          <img class=" w-64" src="assets/img/oia.png" alt="">
         </div>
       </div>
-      <div class="" fxFlex="45" fxFlex.lt-md="70"  fxLayout="row">
-        <div class="right-head items-center" fxFlex="100"  fxLayout="row">
-          <div class="manu items-center justify-evenly" fxFlex="50"  fxLayout="row" fxHide.lt-sm="full">
-            <div class="flag" fxLayout="row">
-              <span class="p-1 font-medium">Arabic</span>
-              <img class="w-11 ml-1 h-6 border border-stone-400" src="assets/img/flag.png" alt="">
-            </div>
-            <div class="icon-arrow">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrows-maximize" width="36" height="36" viewBox="0 0 24 24" stroke-width="0.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M16 4l4 0l0 4" />
-                <path d="M14 10l6 -6" />
-                <path d="M8 20l-4 0l0 -4" />
-                <path d="M4 20l6 -6" />
-                <path d="M16 20l4 0l0 -4" />
-                <path d="M14 14l6 6" />
-                <path d="M8 4l-4 0l0 4" />
-                <path d="M4 4l6 6" />
-              </svg>
-            </div>
-            <div class="layout-add-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-grid-add" width="36" height="36" viewBox="0 0 24 24" stroke-width="0.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M4 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
-                <path d="M14 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
-                <path d="M4 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
-                <path d="M14 17h6m-3 -3v6" />
-              </svg>
-            </div>
-            <div class="bell-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="36" height="36" viewBox="0 0 24 24" stroke-width="0.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                <path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
-                <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
-              </svg>
-              <!-- <div class="notification w-4 h-4 rounded-full text-white -scroll-mt-96 bg-red-600 text-center text-xs">8</div> -->
-            </div>
+    </div>
+    <div class="" fxFlex="45" fxFlex.lt-md="70"  fxLayout="row">
+      <div class="right-head items-center" fxFlex="100"  fxLayout="row">
+        <div class="manu items-center justify-evenly" fxFlex="50"  fxLayout="row" fxHide.lt-sm="full">
+          <div class="flag" fxLayout="row">
+            <span class="p-1 font-medium">Arabic</span>
+            <img class="w-11 ml-1 h-6 border border-stone-400" src="assets/img/flag.png" alt="">
           </div>
-          <div class="profile pl-5 items-center border-l border-slate-200" fxFlex="50" fxLayout="row"  fxHide.lt-lg="full">
-            <div class="logo">
-              <div class="logo-img">
-                <img class="w-12 h-13 p-1 border border-stone-400 rounded-full" src="assets/img/oia-logo.png" alt="">
-              </div>
-            </div>
-            <div class="logo-text ml-2">
-              <p class="m-0 text-lg font-medium">Oman Investment Authority</p>
-              <div class="secont-line" fxLayout="row">
-                <p class="m-0">Company Code:</p>
-                <span class="ml-2 font-medium text-slate-500">OIA15240</span>
-              </div>
-            </div>
-            <div class="dropdown text-center ml-6"  fxHide.lt-lg="full">
-              <div class="border border-stone-400 rounded-full">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="20" height="20" viewBox="0 0 24 24" stroke-width="0.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                  <path d="M6 9l6 6l6 -6" />
-                </svg>
-              </div>
-            </div>
+          <div class="icon-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrows-maximize" width="36" height="36" viewBox="0 0 24 24" stroke-width="0.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <path d="M16 4l4 0l0 4" />
+              <path d="M14 10l6 -6" />
+              <path d="M8 20l-4 0l0 -4" />
+              <path d="M4 20l6 -6" />
+              <path d="M16 20l4 0l0 -4" />
+              <path d="M14 14l6 6" />
+              <path d="M8 4l-4 0l0 4" />
+              <path d="M4 4l6 6" />
+            </svg>
           </div>
-          <div class="logo right-3 " fxHide.gt-md="full ">
+          <div class="layout-add-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-grid-add" width="36" height="36" viewBox="0 0 24 24" stroke-width="0.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <path d="M4 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+              <path d="M14 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+              <path d="M4 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+              <path d="M14 17h6m-3 -3v6" />
+            </svg>
+          </div>
+          <div class="bell-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="36" height="36" viewBox="0 0 24 24" stroke-width="0.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+              <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+            </svg>
+            <!-- <div class="notification w-4 h-4 rounded-full text-white -scroll-mt-96 bg-red-600 text-center text-xs">8</div> -->
+          </div>
+        </div>
+        <div class="profile pl-5 items-center border-l border-slate-200" fxFlex="50" fxLayout="row"  fxHide.lt-lg="full">
+          <div class="logo">
             <div class="logo-img">
               <img class="w-12 h-13 p-1 border border-stone-400 rounded-full" src="assets/img/oia-logo.png" alt="">
             </div>
           </div>
+          <div class="logo-text ml-2">
+            <p class="m-0 text-lg font-medium">Oman Investment Authority</p>
+            <div class="secont-line" fxLayout="row">
+              <p class="m-0">Company Code:</p>
+              <span class="ml-2 font-medium text-slate-500">OIA15240</span>
+            </div>
+          </div>
+          <div class="dropdown text-center ml-6"  fxHide.lt-lg="full">
+            <div class="border border-stone-400 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="20" height="20" viewBox="0 0 24 24" stroke-width="0.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M6 9l6 6l6 -6" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="logo right-3 " fxHide.gt-md="full ">
+          <div class="logo-img">
+            <img class="w-12 h-13 p-1 border border-stone-400 rounded-full" src="assets/img/oia-logo.png" alt="">
+          </div>
         </div>
       </div>
     </div>
+  </div>

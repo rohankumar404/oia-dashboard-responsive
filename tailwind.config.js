@@ -10,6 +10,8 @@ module.exports = {
         mywidth: "28%",
         lableWidth: "58%",
         minwidth: "30%",
+        containerWidth: "86%",
+        tablewidth: "49.5%",
       },
       height: {
         myheight: "453px",
@@ -20,6 +22,9 @@ module.exports = {
         rightbottomShadow: "1px 1px 0px 0px",
         lefttopShadow: "-1px -1px 0px 0px"
       },
+      screens: {
+        'xs': { 'raw': '(min-width: 576px)' },
+      }
     },
   },
   plugins: [],
